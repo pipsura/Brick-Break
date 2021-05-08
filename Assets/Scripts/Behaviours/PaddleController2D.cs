@@ -8,6 +8,11 @@ public class PaddleController2D : MonoBehaviour
 {
 
     [SerializeField] private float runSpeed;
+    private float finalSpeed;
+
+    public float rightScreenEdge;
+    public float leftScreenEdge;
+    
 
     private Rigidbody2D rigidbody;
     private Vector2 myVelocity;
@@ -25,8 +30,20 @@ public class PaddleController2D : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
+        if (transform.position.x <= leftScreenEdge && currentInputDirection == Vector2.left)
+        {
+            finalSpeed = 0;
+
+        } else if (transform.position.x >= rightScreenEdge && currentInputDirection == Vector2.right) {
+            finalSpeed = 0;
+
+        } else
+        {
+            finalSpeed = runSpeed;
+        }
+
         myVelocity = rigidbody.velocity;
-        myVelocity.x = direction.x * runSpeed;
+        myVelocity.x = direction.x * finalSpeed;
         rigidbody.velocity = myVelocity;
     }
 
