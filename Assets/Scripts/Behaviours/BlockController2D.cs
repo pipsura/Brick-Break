@@ -29,4 +29,13 @@ public class BlockController2D : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Ball"))
+        {
+            Debug.Log("Damage");
+            TakeDamage();
+        }
+    }
+
 }
