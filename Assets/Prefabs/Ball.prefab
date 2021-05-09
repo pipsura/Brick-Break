@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1604f24d6f685a248bb3bd4d75f8375a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeed: 0
-  rightScreenEdge: 0
-  leftScreenEdge: 0
+  paddle: {fileID: 0}
+  inPlay: 0
+  moveSpeed: 500

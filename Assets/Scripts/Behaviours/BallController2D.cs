@@ -15,15 +15,19 @@ public class BallController2D : MonoBehaviour
     private void Awake()
     {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
-
-        rigidbody.AddForce(Vector2.up * moveSpeed);
     }
 
     private void Update()
     {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && !inPlay)
+        {
+            inPlay = true;
+            rigidbody.AddForce(Vector2.up * moveSpeed);
+        }
         if (!inPlay)
         {
             transform.position = paddle.position;
+            
         }
 
     }
@@ -39,9 +43,5 @@ public class BallController2D : MonoBehaviour
 
     }
 
-    public void OnBall(InputValue input)
-    {
-        inPlay = true;
-    }
 
 }

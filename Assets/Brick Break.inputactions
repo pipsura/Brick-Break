@@ -14,14 +14,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Ball",
-                    "type": "Button",
-                    "id": "031d3235-ef29-40cc-b00c-d65cb9f6293a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Look",
                     "type": "Value",
                     "id": "d5dfc687-d18e-461a-96d5-912ddb308a11",
@@ -256,17 +248,6 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0173cf0e-8223-4dc5-8fdf-cc3c095eaabb",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Ball",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
