@@ -10,6 +10,8 @@ public class BallController2D : MonoBehaviour
     public Transform paddle;
     public bool inPlay;
 
+    public GameManager gameManager;
+
     [SerializeField] private float moveSpeed;
 
     private void Awake()
@@ -19,6 +21,10 @@ public class BallController2D : MonoBehaviour
 
     private void Update()
     {
+        if (gameManager.gameOver)
+        {
+            return;
+        }
         if (Keyboard.current.spaceKey.wasPressedThisFrame && !inPlay)
         {
             inPlay = true;
@@ -37,11 +43,14 @@ public class BallController2D : MonoBehaviour
         if (collision.CompareTag("Bottom"))
         {
             Debug.Log("Ball hit bottom of screen");
-            inPlay = false;
             rigidbody.velocity = Vector2.zero;
+            inPlay = false;
+            gameManager.UpdateLives(-1);
         }
 
     }
+
+    
 
 
 }

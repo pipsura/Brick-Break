@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myElement: {fileID: 11400000, guid: 9d79e9546662be345a8fae547277a518, type: 2}
   Health: 0
+  gameManager: {fileID: 0}
 --- !u!61 &8862226098179591680
 BoxCollider2D:
   m_ObjectHideFlags: 0

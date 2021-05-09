@@ -12,7 +12,8 @@ public class PaddleController2D : MonoBehaviour
 
     public float rightScreenEdge;
     public float leftScreenEdge;
-    
+
+    public GameManager gameManager;
 
     private Rigidbody2D rigidbody;
     private Vector2 myVelocity;
@@ -25,6 +26,10 @@ public class PaddleController2D : MonoBehaviour
 
     private void Update()
     {
+        if (gameManager.gameOver)
+        {
+            return;
+        }
         Move(currentInputDirection);
     }
 

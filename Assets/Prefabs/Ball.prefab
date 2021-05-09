@@ -135,4 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddle: {fileID: 0}
   inPlay: 0
+  gameManager: {fileID: 0}
   moveSpeed: 600

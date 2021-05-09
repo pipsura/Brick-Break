@@ -8,6 +8,8 @@ public class BlockController2D : MonoBehaviour
     [SerializeField] private Element myElement;
     [SerializeField] private int Health;
 
+    public GameManager gameManager;
+
     void Start()
     {
         Health = myElement.Health;
@@ -26,6 +28,8 @@ public class BlockController2D : MonoBehaviour
     void OnBreak()
     {
         Debug.Log("Block destroyed");
+        gameManager.UpdateScore(myElement.Score);
+        gameManager.UpdateNumberOfBricks();
         Destroy(gameObject);
     }
 
