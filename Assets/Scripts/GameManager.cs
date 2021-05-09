@@ -61,13 +61,13 @@ public class GameManager : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
         Debug.Log("Game Restarted");
     }
 
     public void Quit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenuScene");
         Debug.Log("Game Quit");
     }
 
