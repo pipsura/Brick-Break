@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PaddleController2D : MonoBehaviour
 {
 
-    [SerializeField] private float runSpeed;
+    [SerializeField] private float moveSpeed;
     private float finalSpeed;
 
     public float rightScreenEdge;
@@ -30,21 +30,28 @@ public class PaddleController2D : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
+        CheckEdgeMovement();
+        myVelocity = rigidbody.velocity;
+        myVelocity.x = direction.x * finalSpeed;
+        rigidbody.velocity = myVelocity;
+    }
+
+    private void CheckEdgeMovement()
+    {
         if (transform.position.x <= leftScreenEdge && currentInputDirection == Vector2.left)
         {
             finalSpeed = 0;
 
-        } else if (transform.position.x >= rightScreenEdge && currentInputDirection == Vector2.right) {
+        }
+        else if (transform.position.x >= rightScreenEdge && currentInputDirection == Vector2.right)
+        {
             finalSpeed = 0;
 
-        } else
-        {
-            finalSpeed = runSpeed;
         }
-
-        myVelocity = rigidbody.velocity;
-        myVelocity.x = direction.x * finalSpeed;
-        rigidbody.velocity = myVelocity;
+        else
+        {
+            finalSpeed = moveSpeed;
+        }
     }
 
     public void OnMove(InputValue input)
