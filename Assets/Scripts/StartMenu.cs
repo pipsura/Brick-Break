@@ -15,16 +15,26 @@ public class StartMenu : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(LoadLevel());
+        StartCoroutine(LoadLevel("GameScene"));
     }
 
-    IEnumerator LoadLevel()
+    public void PlayAgain()
+    {
+        StartCoroutine(LoadLevel("GameScene"));
+    }
+
+    public void Quit()
+    {
+        StartCoroutine(LoadLevel("MainMenuScene"));
+    }
+
+    IEnumerator LoadLevel(string input)
     {
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(input);
     }
 
 

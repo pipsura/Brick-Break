@@ -4411,6 +4411,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelTransition
       objectReference: {fileID: 0}
+    - target: {fileID: 165243660065518291, guid: 2d1deda391aad4348837622a447a7705,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 165243660065518292, guid: 2d1deda391aad4348837622a447a7705,
         type: 3}
       propertyPath: m_RootOrder

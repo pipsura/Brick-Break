@@ -59,17 +59,7 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene("GameScene");
-        Debug.Log("Game Restarted");
-    }
-
-    public void Quit()
-    {
-        SceneManager.LoadScene("MainMenuScene");
-        Debug.Log("Game Quit");
-    }
+    
 
     public void UpdateNumberOfBricks()
     {

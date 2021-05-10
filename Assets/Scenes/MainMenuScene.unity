@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &66489916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4244450812732532134, guid: 2d1deda391aad4348837622a447a7705,
+    type: 3}
+  m_PrefabInstance: {fileID: 165243660951048344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf5f0676eef1224bbccbd2c8f50d4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &575238330
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1862272628}
+      - m_Target: {fileID: 66489916}
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -616,7 +628,6 @@ GameObject:
   - component: {fileID: 1862272627}
   - component: {fileID: 1862272626}
   - component: {fileID: 1862272625}
-  - component: {fileID: 1862272628}
   - component: {fileID: 1862272629}
   m_Layer: 0
   m_Name: Main Camera
@@ -690,20 +701,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1862272628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862272624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf5f0676eef1224bbccbd2c8f50d4bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  transitionTime: 1
 --- !u!82 &1862272629
 AudioSource:
   m_ObjectHideFlags: 0
@@ -968,7 +965,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1862272628}
+      - m_Target: {fileID: 66489916}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1197,6 +1194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 165243659642435149, guid: 2d1deda391aad4348837622a447a7705,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 165243660065518291, guid: 2d1deda391aad4348837622a447a7705,
         type: 3}
       propertyPath: m_Name
