@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-
+    public Animator transition;
+    public float transitionTime = 1f;
     public void QuitGame()
     {
         Application.Quit();
@@ -14,6 +15,18 @@ public class StartMenu : MonoBehaviour
 
     public void StartGame()
     {
+        StartCoroutine(LoadLevel());
+    }
+
+    IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
         SceneManager.LoadScene("GameScene");
     }
+
+
+
 }

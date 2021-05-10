@@ -8,24 +8,31 @@ public class BlockController2D : MonoBehaviour
     [SerializeField] private Element myElement;
     [SerializeField] private int Health;
 
+    public Sprite minorSprite;
+    public Sprite majorSprite;
+
     public GameManager gameManager;
+
 
     void Start()
     {
         Health = myElement.Health;
     }
 
-
-    void TakeDamage()
+    public void TakeDamage()
     {
         Health--;
         if (Health <= 0)
         {
+
             OnBreak();
+        } else
+        {
+            DamageBrick();
         }
     }
 
-    void OnBreak()
+    public void OnBreak()
     {
         Debug.Log("Block destroyed");
         gameManager.UpdateScore(myElement.Score);
@@ -41,5 +48,17 @@ public class BlockController2D : MonoBehaviour
             TakeDamage();
         }
     }
+
+    public void DamageBrick()
+    {
+        if (Health > 1)
+        {
+            GetComponent<SpriteRenderer>().sprite = minorSprite;
+        } else
+        {
+            GetComponent<SpriteRenderer>().sprite = majorSprite;
+        }
+    }
+
 
 }

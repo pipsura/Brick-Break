@@ -12,11 +12,14 @@ public class BallController2D : MonoBehaviour
 
     public GameManager gameManager;
 
+    AudioSource audioClip;
+
     [SerializeField] private float moveSpeed;
 
     private void Awake()
     {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        audioClip = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -47,10 +50,24 @@ public class BallController2D : MonoBehaviour
             inPlay = false;
             gameManager.UpdateLives(-1);
         }
-
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Block"))
+        {
+            playAudio();
+        }
+    }
+
+    public void playAudio()
+    {
+        Debug.Log("Audio called");
+        audioClip.Play();
+    }
+
+
+
 
 
 }
